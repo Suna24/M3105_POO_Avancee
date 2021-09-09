@@ -28,9 +28,9 @@ public class Inventory {
 		return null;
 	}
 
-	public List search(Guitar searchGuitar) {
+	public List<Guitar> search(Guitar searchGuitar) {
 		
-		List guitarMatch = new ArrayList<>();
+		List<Guitar> matchingGuitars = new ArrayList<>();
 		
 		for (Iterator<Guitar> i = guitars.iterator(); i.hasNext();) {
 			Guitar guitar = i.next();
@@ -40,31 +40,32 @@ public class Inventory {
 
 			// Builder
 			Builder builder = searchGuitar.getBuilder();
-			if ((builder != null) && (!builder.equals("")) && (!builder.equals(guitar.getBuilder())))
+			if ((builder != null) && (!builder.equals(guitar.getBuilder())))
 				continue;
 
 			// Model
-			String model = searchGuitar.getModel().toLowerCase();
-			if ((model != null) && (!model.equals("")) && (!model.equals(guitar.getModel().toLowerCase())))
+			String model = searchGuitar.getModel();
+			if ((model != null) && (!model.equals("")) && (!model.equalsIgnoreCase(guitar.getModel())))
 				continue;
 
 			// Type
 			Type type = searchGuitar.getType();
-			if ((type != null) && (!type.equals("")) && (!type.equals(guitar.getType())))
+			if ((type != null) && (!type.equals(guitar.getType())))
 				continue;
 
 			// BackWood
 			Wood backWood = searchGuitar.getBackWood();
-			if ((backWood != null) && (!backWood.equals("")) && (!backWood.equals(guitar.getBackWood())))
+			if ((backWood != null) && (!backWood.equals(guitar.getBackWood())))
 				continue;
 
 			// TopWood
 			Wood topWood = searchGuitar.getTopWood();
-			if ((topWood != null) && (!topWood.equals("")) && (!topWood.equals(guitar.getTopWood())))
+			if ((topWood != null) && (!topWood.equals(guitar.getTopWood())))
+				continue;
 
-				guitarMatch.add(guitar);
+				matchingGuitars.add(guitar);
 		}
-		return guitarMatch;
+		return matchingGuitars;
 	}
 
 }

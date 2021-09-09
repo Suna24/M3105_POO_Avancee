@@ -24,7 +24,7 @@ public class SearchTI {
 	    List matchingGuitars = inventory.search(whatCustomerWant);
 	    
 	    Assert.assertNotNull(matchingGuitars);
-	    Assert.assertEquals(2, matchingGuitars.size());    
+	    Assert.assertEquals(2, matchingGuitars.size());   
 	}
 	
 	@Test
