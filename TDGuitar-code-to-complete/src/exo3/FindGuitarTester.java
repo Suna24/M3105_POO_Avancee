@@ -1,4 +1,4 @@
-package exo2;
+package exo3;
 
 import java.util.List;
 
@@ -10,16 +10,16 @@ public class FindGuitarTester {
 		Inventory inventory = new Inventory();
 		initializeInventory(inventory);
 
-		Guitar whatErinLikes = new Guitar("", 0, Builder.FENDER, "Stratocastor", Type.ELECTRIC, Wood.ALDER, Wood.ALDER);
+		GuitarSpec whatErinLikes = new GuitarSpec(Builder.FENDER, "Stratocastor", Type.ELECTRIC, Wood.ALDER, Wood.ALDER);
 
 		List<Guitar> matchingGuitars = inventory.search(whatErinLikes);
 
 		if (!matchingGuitars.isEmpty()) {
 			for (Guitar guitar : matchingGuitars) {
 
-				System.out.println("Erin, you might like this " + guitar.getBuilder() + " " + guitar.getModel() + " "
-						+ guitar.getType() + " guitar:\n   " + guitar.getBackWood() + " back and sides,\n   "
-						+ guitar.getTopWood() + " top.\nYou can have it for only $" + guitar.getPrice() + "!\n");
+				System.out.println("Erin, you might like this " + guitar.getSpec().getBuilder() + " " + guitar.getSpec().getModel() + " "
+						+ guitar.getSpec().getType() + " guitar:\n   " + guitar.getSpec().getBackWood() + " back and sides,\n   "
+						+ guitar.getSpec().getTopWood() + " top.\nYou can have it for only $" + guitar.getPrice() + "!\n");
 			}
 		} else {
 			System.out.println("Sorry, Erin, we have nothing for you.");
