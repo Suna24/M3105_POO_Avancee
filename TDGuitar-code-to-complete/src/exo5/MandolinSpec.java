@@ -15,5 +15,23 @@ public class MandolinSpec extends InstrumentSpec{
 	public Style getStyle() {
 		return style;
 	}
+	
+	//Méthode matches
+	public boolean matches(InstrumentSpec searchInstrument) {
+		
+		if(!super.matches(searchInstrument)) {
+			return false;
+		}
+		
+		if(!(searchInstrument instanceof MandolinSpec)) {
+			return false;
+		}
+		
+		if(((MandolinSpec) searchInstrument).getStyle() != getStyle() && ((MandolinSpec) searchInstrument).getStyle() != null) {
+			return false;
+		}
+
+		return true;
+	}
 
 }

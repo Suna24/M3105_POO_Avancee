@@ -59,4 +59,29 @@ public abstract class InstrumentSpec {
 		this.topWood = topWood;
 	}
 
+	public boolean matches(InstrumentSpec instrumentSpec) {
+
+			if (instrumentSpec.getBuilder() != null && !instrumentSpec.getBuilder().equals(getBuilder())) {
+				return false;
+			}
+
+			if (instrumentSpec.getModel() != null && instrumentSpec.getModel() != "" && !instrumentSpec.getModel().equalsIgnoreCase(getModel())) {
+				return false;
+			}
+
+			if (instrumentSpec.getType() != null && !instrumentSpec.getType().equals(getType())) {
+				return false;
+			}
+
+			if (instrumentSpec.getTopWood() != null && !instrumentSpec.getTopWood().equals(getTopWood())) {
+				return false;
+			}
+
+			if (instrumentSpec.getBackWood() != null  && !instrumentSpec.getBackWood().equals(getBackWood())) {
+				return false;
+			}
+
+			return true;
+	}
+
 }

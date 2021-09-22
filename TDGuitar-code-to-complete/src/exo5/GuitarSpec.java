@@ -17,31 +17,19 @@ public class GuitarSpec extends InstrumentSpec{
 	public int getNumStrings() {
 		return numStrings;
 	}
-
 	
-	public boolean matches(GuitarSpec searchGuitar) {
-
-		if (searchGuitar.getBuilder() != null && !searchGuitar.getBuilder().equals(getBuilder())) {
+	//Méthode matches
+	public boolean matches(InstrumentSpec searchInstrument) {
+		
+		if(!super.matches(searchInstrument)) {
 			return false;
 		}
-
-		if (searchGuitar.getModel() != null && searchGuitar.getModel() != "" && !searchGuitar.getModel().equalsIgnoreCase(getModel())) {
+		
+		if(!(searchInstrument instanceof GuitarSpec)) {
 			return false;
 		}
-
-		if (searchGuitar.getType() != null && !searchGuitar.getType().equals(getType())) {
-			return false;
-		}
-
-		if (searchGuitar.getNumStrings() != NO_PREF_NUM_STRINGS && searchGuitar.getNumStrings() != getNumStrings()) {
-			return false;
-		}
-
-		if (searchGuitar.getTopWood() != null && !searchGuitar.getTopWood().equals(getTopWood())) {
-			return false;
-		}
-
-		if (searchGuitar.getBackWood() != null  && !searchGuitar.getBackWood().equals(getBackWood())) {
+		
+		if (((GuitarSpec) searchInstrument).getNumStrings() != NO_PREF_NUM_STRINGS && ((GuitarSpec) searchInstrument).getNumStrings() != getNumStrings()) {
 			return false;
 		}
 
