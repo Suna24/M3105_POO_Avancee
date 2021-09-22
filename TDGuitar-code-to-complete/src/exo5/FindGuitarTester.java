@@ -5,8 +5,23 @@ import java.util.List;
 public class FindGuitarTester {
 
 	public static void main(String[] args) {
-		// Set up Rick's guitar inventory
-		//TODO:
+		Inventory inventory = new Inventory();
+		initializeInventory(inventory);
+
+		GuitarSpec whatErinLikes = new GuitarSpec(Builder.FENDER, "Stratocastor", 6, Type.ELECTRIC, Wood.ALDER, Wood.ALDER);
+
+		List<Instrument> matchingInstruments = inventory.search(whatErinLikes);
+
+		if (!matchingInstruments.isEmpty()) {
+			for (Instrument instrument : matchingInstruments) {
+
+				System.out.println("Erin, you might like this " + instrument.getInstrumentSpec().getBuilder() + " " + instrument.getInstrumentSpec().getModel() + " "
+						+ instrument.getInstrumentSpec().getType() + " guitar:\n   " + instrument.getInstrumentSpec().getBackWood() + " back and sides,\n   "
+						+ instrument.getInstrumentSpec().getTopWood() + " top.\nYou can have it for only $" + instrument.getPrice() + "!\n");
+			}
+		} else {
+			System.out.println("Sorry, Erin, we have nothing for you.");
+		}
 	}
 
 	public static void initializeInventory(Inventory inventory) {
