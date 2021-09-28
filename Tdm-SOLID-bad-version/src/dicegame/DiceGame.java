@@ -1,16 +1,18 @@
 package dicegame;
 
+import dicegame.display.Display;
+
 public class DiceGame implements IDiceGame{
 
-	private DiceWith6Faces dice;
-	private KeyboardInput input;
+	private Dice dice;
+	private Input input;
+	private IDisplay display;
 	
-	public DiceGame() {
+	public DiceGame(Input input, IDisplay aDisplay, Dice aDice) {
 		super();
-		input = new KeyboardInput();
-		dice = new  DiceWith6Faces();
-		// change next line depending on the dice
-		// dice = new  DiceWith8Faces();
+		this.input = input;
+		this.display = display;
+		this.dice = aDice;
 	}
 
 	@Override
@@ -20,43 +22,19 @@ public class DiceGame implements IDiceGame{
 		} while (input.readChar() == 'y');
 	}
 
-	@Override
 	public void playOneRound() {
-		displayEntryText();
+		display.displayEntryText();
 		int userChoice =input.readInt();
 		int diceRollValue = getRandomDiceValue();
-		displayDiceValue(diceRollValue);
+		display.displayDiceValue(diceRollValue);
 		if (userChoice == diceRollValue)
-			displaySuccessText();
-		displayPlayAgainText();
+			display.displaySuccessText();
+		display.displayPlayAgainText();
 	}
 
-	private void displayDiceValue(int diceRollValue) {
-		System.out.println("Dice roll..");
-		System.out.println("The value is " + diceRollValue);
-	}
-
-	@Override
 	public int getRandomDiceValue() {
-		if (dice instanceof DiceWith6Faces)
-			return dice.getRandomValueFrom1To6();
-		else 
-			return ((DiceWith8Faces)dice).getRandomValueFrom1To8();
-	}
-
-	@Override
-	public void displayEntryText() {
-		System.out.println("Guess the dice value on next roll : ");
-	}
-
-	@Override
-	public void displayPlayAgainText() {
-		System.out.println("play again ?");
-	}
-
-	@Override
-	public void displaySuccessText() {
-		System.out.println("Well done!");
+		dice.roll();
+		return dice.getTopValue();
 	}
 
 }
