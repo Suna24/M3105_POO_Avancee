@@ -31,5 +31,12 @@ public class TestCloning {
         cloned.getDepartment().setName("Finance");
  
         System.out.println(original.getDepartment().getName());
+        
+        
+        //Question
+        //Shallow cloning (clonage en surface), cloner que les types primitifs des objets
+        // (String, int...)
+        //Il faut modifier le code pour faire un deep cloning (clonage en profondeur) et redéfinir
+        // le clone d'un objet pour pouvoir cloner les types objets  
     }
 }

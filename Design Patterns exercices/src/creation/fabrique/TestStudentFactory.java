@@ -12,3 +12,9 @@ public class TestStudentFactory {
 	}
 
 }
+
+//Questions
+//Le principe d'ouverture fermeture n'est pas respecté
+//ProduitFactory --> FabriqueAnimal
+//ProduitA --> Animal
+//Produit A1 && A2 --> Chien et Chat

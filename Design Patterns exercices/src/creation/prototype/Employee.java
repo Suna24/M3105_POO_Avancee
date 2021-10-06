@@ -14,7 +14,35 @@ public class Employee implements Cloneable {
 
 	@Override
 	protected Object clone() throws CloneNotSupportedException {
-		return super.clone();
+		Employee clone = (Employee) super.clone();
+		Department dptclone = (Department) getDepartment().clone();
+		clone.setDepartment(dptclone);
+		return clone;
+	}
+	
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Employee other = (Employee) obj;
+		if (department == null) {
+			if (other.department != null)
+				return false;
+		} else if (!department.equals(other.department))
+			return false;
+		if (employeeName == null) {
+			if (other.employeeName != null)
+				return false;
+		} else if (!employeeName.equals(other.employeeName))
+			return false;
+		if (empoyeeId != other.empoyeeId)
+			return false;
+		return true;
 	}
 
 	public void setDepartment(Department department) {
@@ -37,7 +65,7 @@ public class Employee implements Cloneable {
 
 }
 
-class Department {
+class Department implements Cloneable{
 	private int id;
 	private String name;
 
@@ -54,5 +82,11 @@ class Department {
 	public void setName(String name) {
 		this.name = name;
 	}
+
+	public Object clone() throws CloneNotSupportedException {
+		return super.clone();
+	}
+	
+	
 
 }

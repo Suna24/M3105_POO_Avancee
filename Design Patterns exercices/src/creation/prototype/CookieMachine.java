@@ -21,4 +21,9 @@ public class CookieMachine {
 			System.out.println(tempCookie);
 		}
 	}
+	
+	//Question
+	//CoconutCookie --> Concrete Prototype
+	//Cookie --> Prototype
+	//CookieMachine --> Client
 }

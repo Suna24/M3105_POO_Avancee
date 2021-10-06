@@ -16,4 +16,11 @@ public class Pizza {
 	public void setGarniture(String garniture) {
 		this.garniture = garniture;
 	}
+
+	@Override
+	public String toString() {
+		return "Pizza [pate=" + pate + ", sauce=" + sauce + ", garniture=" + garniture + "]";
+	}
+	
+	
 }

@@ -8,13 +8,13 @@ public interface StudentFactory {
 class SmartStudentFactory implements StudentFactory {
 
 	public Student createStudent() {
-		return null;
+		return new SmartStudent();
 	}
 }
 
 class DumbStudentFactory implements StudentFactory {
 
 	public Student createStudent() {
-		return null;
+		return new DumbStudent();
 	}
 }

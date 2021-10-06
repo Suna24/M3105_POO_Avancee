@@ -5,13 +5,17 @@ public interface Student {
 	public void giveOOskill();
 }
 
-class SmartStudent {
+class SmartStudent implements Student{
 
 	public void giveOOskill() {
 		System.out.println("Good level");
 	}
 }
 
-class DumbStudent {
+class DumbStudent implements Student{
+
+	public void giveOOskill() {
+		System.out.println("Bad level");
+	}
 
 }

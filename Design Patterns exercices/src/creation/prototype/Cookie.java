@@ -1,6 +1,6 @@
 package creation.prototype;
 
-public class Cookie implements Cloneable {
+public abstract class Cookie implements Cloneable {
 
 	private String taste;
 

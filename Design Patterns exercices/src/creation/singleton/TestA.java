@@ -8,7 +8,9 @@ public class TestA {
 		unA.method();
 		
 		//Question
-		//Le DP Singleton est à eviter car il peut générer trop
-		//de dépendances
+		//Le DP Singleton est à eviter car les instances uniques des objets
+		//deviennt accessibles de partout
+		//C'est également difficile à tester
+		//Problème revient à faire une variable globale
 	}
 }

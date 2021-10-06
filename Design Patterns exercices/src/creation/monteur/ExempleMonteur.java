@@ -25,9 +25,17 @@ public class ExempleMonteur {
 		MonteurPizza monteurPizzaHawaii = new MonteurPizzaHawaii();
 		MonteurPizza monteurPizzaPiquante = new MonteurPizzaPiquante();
 
-		serveur.setMonteurPizza(monteurPizzaHawaii);
+		serveur.setMonteurPizza(monteurPizzaPiquante);
 		serveur.construirePizza();
 
 		Pizza pizza = serveur.getPizza();
+		
+		System.out.println(pizza);
 	}
 }
+
+//Question
+//Directeur --> Serveur
+//Produit --> Pizza
+//Monteur Abstrait --> MonteurPizza
+//Monteurs Concrets --> MonteurPizzaHawai && MonteurPizzaPiquante

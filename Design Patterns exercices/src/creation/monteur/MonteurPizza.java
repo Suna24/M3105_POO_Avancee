@@ -20,7 +20,7 @@ public abstract class MonteurPizza {
 
 class MonteurPizzaHawaii extends MonteurPizza {
 	public void monterPate() {
-		pizza.setPate("croisée");
+		pizza.setPate("croisee");
 	}
 
 	public void monterSauce() {
@@ -34,7 +34,7 @@ class MonteurPizzaHawaii extends MonteurPizza {
 
 class MonteurPizzaPiquante extends MonteurPizza {
 	public void monterPate() {
-		pizza.setPate("feuilletée");
+		pizza.setPate("feuilletee");
 	}
 
 	public void monterSauce() {
