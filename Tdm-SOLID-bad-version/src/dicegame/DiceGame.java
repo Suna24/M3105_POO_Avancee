@@ -1,7 +1,5 @@
 package dicegame;
 
-import dicegame.display.Display;
-
 public class DiceGame implements IDiceGame{
 
 	private Dice dice;
@@ -11,7 +9,7 @@ public class DiceGame implements IDiceGame{
 	public DiceGame(Input input, IDisplay aDisplay, Dice aDice) {
 		super();
 		this.input = input;
-		this.display = display;
+		this.display = aDisplay;
 		this.dice = aDice;
 	}
 
