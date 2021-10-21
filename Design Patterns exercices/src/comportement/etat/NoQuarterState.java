@@ -1,7 +1,7 @@
 package comportement.etat;
 
 public class NoQuarterState implements State {
-    GumballMachine gumballMachine;
+    private GumballMachine gumballMachine;
  
     public NoQuarterState(GumballMachine gumballMachine) {
         this.gumballMachine = gumballMachine;
@@ -24,7 +24,9 @@ public class NoQuarterState implements State {
 		System.out.println("You need to pay first");
 	} 
 	
-	public void refill() { }
+	public void refill() { 
+		
+	}
  
 	public String toString() {
 		return "waiting for quarter";

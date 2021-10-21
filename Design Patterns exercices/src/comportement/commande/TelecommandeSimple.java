@@ -1,5 +1,7 @@
 package comportement.commande;
 
+
+//Rôle de l'invocateur
 public class TelecommandeSimple {
 	Commande emplacement;
 

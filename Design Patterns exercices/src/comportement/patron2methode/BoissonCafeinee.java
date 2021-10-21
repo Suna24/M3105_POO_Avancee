@@ -9,12 +9,12 @@ public abstract class BoissonCafeinee {
 		ajouterSupplements();
 	}
 
-	abstract void preparer();
+	public abstract void preparer();
 
-	abstract void ajouterSupplements();
+	public abstract void ajouterSupplements();
 
 	private void faireBouillirEau() {
-		System.out.println("Portage de lâ€™eau Ã  eÌbullition");
+		System.out.println("Portage de l'eau à ébullition");
 	}
 
 	private void verserDansTasse() {

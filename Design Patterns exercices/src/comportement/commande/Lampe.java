@@ -3,7 +3,7 @@ package comportement.commande;
 public class Lampe {
 
 	public void marche() {
-		System.out.println("AllumÃ©e");
+		System.out.println("Allumée");
 	}
 
 }

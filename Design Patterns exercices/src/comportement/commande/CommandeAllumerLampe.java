@@ -1,7 +1,7 @@
 package comportement.commande;
 
 public class CommandeAllumerLampe implements Commande {
-	Lampe lampe;
+	private Lampe lampe;
 
 	public CommandeAllumerLampe(Lampe lampe) {
 		this.lampe = lampe;

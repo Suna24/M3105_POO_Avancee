@@ -11,3 +11,10 @@ public class BridgePattern {
         vehicle2.manufacture(); 
     } 
 } 
+
+//Questions
+
+//Roles génériques
+//Car and Bike --> RefinedAbstraction
+//Produce and Assemble --> ConcreteImplementor
+//Workshop --> Implementor

@@ -2,13 +2,13 @@ package comportement.etat;
 
 public class GumballMachine {
 
-	State soldOutState;
-	State noQuarterState;
-	State hasQuarterState;
-	State soldState;
+	private State soldOutState;
+	private State noQuarterState;
+	private State hasQuarterState;
+	private State soldState;
 
-	State state;
-	int count = 0;
+	private State state;
+	private int count = 0;
 
 	public GumballMachine(int numberGumballs) {
 		soldOutState = new SoldOutState(this);
@@ -91,3 +91,7 @@ public class GumballMachine {
 		return result.toString();
 	}
 }
+
+//Question
+
+//La multiplicité manquante est 1 car la machine a un seul état courant

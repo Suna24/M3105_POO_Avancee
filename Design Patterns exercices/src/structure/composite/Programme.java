@@ -29,3 +29,7 @@ public class Programme {
 	}
 
 }
+
+//Composite --> CompositeShape
+//Leaf --> Polygon, Line, Ellipse
+//Méthode commune --> Draw()
