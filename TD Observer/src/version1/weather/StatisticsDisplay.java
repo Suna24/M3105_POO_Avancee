@@ -1,19 +1,17 @@
 package version1.weather;
 
-import java.util.*;
-
-public class StatisticsDisplay .......... {
+public class StatisticsDisplay implements Observateur, Displayable {
+	
 	private float maxTemp = 0.0f;
 	private float minTemp = 200;
 	private float tempSum= 0.0f;
 	private int numReadings;
-	//TODO:
 
-	public StatisticsDisplay(.................) {
-		//TODO:
+	public StatisticsDisplay(WeatherData weatherData) {
+		weatherData.registerObservateur(this);
 	}
 
-	public void ........(float temp, float humidity, float pressure) {
+	public void actualiserMesures(float temp, float humidity, float pressure) {
 		tempSum += temp;
 		numReadings++;
 
@@ -24,7 +22,8 @@ public class StatisticsDisplay .......... {
 		if (temp < minTemp) {
 			minTemp = temp;
 		}
-		//TODO:
+		
+		display();
 	}
 
 	public void display() {

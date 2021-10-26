@@ -1,17 +1,14 @@
-package version1.weather;
+package version2.weather;
 
-public class ForecastDisplay implements Observateur, Displayable {
+import java.util.Observable;
+import java.util.Observer;
+
+public class ForecastDisplay implements Observer, Displayable {
 	private float currentPressure = 29.92f;  
 	private float lastPressure;
 
 	public ForecastDisplay(WeatherData weatherData) {
-		weatherData.registerObservateur(this);
-	}
-
-	public void actualiserMesures(float temp, float humidity, float pressure) {
-        lastPressure = currentPressure;
-		currentPressure = pressure;
-		display();
+		weatherData.addObserver(this);
 	}
 
 	public void display() {
@@ -23,5 +20,13 @@ public class ForecastDisplay implements Observateur, Displayable {
 		} else if (currentPressure < lastPressure) {
 			System.out.println("Watch out for cooler, rainy weather");
 		}
+	}
+
+	@Override
+	public void update(Observable o, Object arg) {
+        lastPressure = currentPressure;
+		currentPressure = ((WeatherData) o).getPressure();
+		display();
+		
 	}
 }

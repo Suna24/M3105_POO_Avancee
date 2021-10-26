@@ -1,19 +1,19 @@
-package version1.weather;
+package version2.weather;
 
 import java.util.*;
 
-public class WeatherData implements Sujet {
-	private List<Observateur> observers;
+public class WeatherData extends Observable {
 	private float temperature;
 	private float humidity;
 	private float pressure;
 	
 	public WeatherData() {
-		observers = new ArrayList<>();
+		
 	}
 	
 	public void measurementsChanged() {
-		notifyObservateurs();
+		setChanged();
+		notifyObservers();
 	}
 	
 	public void setMeasurements(float temperature, float humidity, float pressure) {
@@ -35,24 +35,6 @@ public class WeatherData implements Sujet {
 		return pressure;
 	}
 
-	@Override
-	public void registerObservateur(Observateur o) {
-		observers.add(o);
-	}
-
-	@Override
-	public void removeObservateur(Observateur o) {
-		int i = observers.indexOf(o);
-		if (i >= 0) {
-			observers.remove(i);
-		}
-	}
-
-	@Override
-	public void notifyObservateurs() {
-		for(Observateur o : observers) {
-			o.actualiserMesures(temperature, humidity, pressure);
-		}
-	}
+	
 
 }
