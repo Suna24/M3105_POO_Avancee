@@ -16,5 +16,5 @@ public class TestEtudiant {
 
 //Tips
 //Niv objet -- > agrégation (étudiant en attribut de AdapteurObjet) |
-//																	|--> Impélmentents IEtudiant
+//																	|--> Impléments IEtudiant
 //Niv classe --> hérite de student									|

@@ -14,7 +14,9 @@ public class Test {
 		
 		System.out.println(paul.statement());
 		
-		//System.out.println(paul.htmlStatement());
+		System.out.println();
+		
+		System.out.println(paul.htmlStatement());
 		
 	}
 
