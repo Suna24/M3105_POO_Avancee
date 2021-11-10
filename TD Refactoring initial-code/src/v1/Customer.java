@@ -78,7 +78,8 @@ public class Customer {
 
 			//determine amounts for each line
 			switch (each.getMovie().getPriceCode()) {
-			case Movie.REGULAR: thisAmount += 2;
+			case Movie.REGULAR: 
+				thisAmount += 2;
 			if (each.getDaysRented() > 2)
 				thisAmount += (each.getDaysRented() - 2) * 1.5; break;
 			case Movie.NEW_RELEASE:
