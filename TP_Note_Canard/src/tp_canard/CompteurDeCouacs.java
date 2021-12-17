@@ -31,4 +31,11 @@ public class CompteurDeCouacs implements Cancaneur{
 		
 	}
 
+	@Override
+	public void accept(Visitor v) {
+		v.visit(this);
+		cancaneur.accept(v);
+		
+	}
+
 }

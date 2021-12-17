@@ -38,15 +38,15 @@
     </display>  
   </interface>  
   <association id="5">    
-    <end type="SOURCE" refId="3" navigable="false">      
-      <attribute id="6" name="observateurs">        
-        <position height="0" width="0" x="133" y="99"/>      
+    <end type="SOURCE" refId="2" navigable="false">      
+      <attribute id="6" name="obs">        
+        <position height="0" width="0" x="-109" y="-52"/>      
       </attribute>      
-      <multiplicity id="7" minimum="0" maximum="2147483647">        
-        <position height="0" width="0" x="133" y="99"/>      
+      <multiplicity id="7" minimum="0" maximum="1">        
+        <position height="0" width="0" x="-109" y="-52"/>      
       </multiplicity>    
     </end>    
-    <end type="TARGET" refId="4" navigable="true"/>    
+    <end type="TARGET" refId="3" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <realization id="8">    
@@ -54,15 +54,15 @@
     <end type="TARGET" refId="4"/>  
   </realization>  
   <association id="9">    
-    <end type="SOURCE" refId="2" navigable="false">      
-      <attribute id="10" name="obs">        
-        <position height="0" width="0" x="-109" y="-52"/>      
+    <end type="SOURCE" refId="3" navigable="false">      
+      <attribute id="10" name="observateurs">        
+        <position height="0" width="0" x="133" y="99"/>      
       </attribute>      
-      <multiplicity id="11" minimum="0" maximum="1">        
-        <position height="0" width="0" x="-109" y="-52"/>      
+      <multiplicity id="11" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="133" y="99"/>      
       </multiplicity>    
     </end>    
-    <end type="TARGET" refId="3" navigable="true"/>    
+    <end type="TARGET" refId="4" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <classifier-display autosize="true" stereotype="false" package="false" initial-value="false" signature="true" 

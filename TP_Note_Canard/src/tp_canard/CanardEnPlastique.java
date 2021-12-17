@@ -19,4 +19,10 @@ public class CanardEnPlastique implements Cancaneur{
 		
 	}
 
+	@Override
+	public void accept(Visitor v) {
+		v.visit(this);
+		
+	}
+
 }

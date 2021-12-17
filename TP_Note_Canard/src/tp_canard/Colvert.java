@@ -27,4 +27,9 @@ public class Colvert implements Cancaneur{
 		
 	}
 
+	@Override
+	public void accept(Visitor v) {
+		v.visit(this);
+	}
+
 }

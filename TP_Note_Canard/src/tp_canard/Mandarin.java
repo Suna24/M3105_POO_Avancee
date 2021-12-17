@@ -19,5 +19,11 @@ public class Mandarin implements Cancaneur{
 		// TODO Auto-generated method stub
 		
 	}
+
+	@Override
+	public void accept(Visitor v) {
+		v.visit(this);
+		
+	}
 	
 }

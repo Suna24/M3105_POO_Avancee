@@ -32,4 +32,14 @@ public class Troupe implements Cancaneur{
 		
 	}
 
+	@Override
+	public void accept(Visitor v) { 
+		v.visit(this);
+		
+		for (Cancaneur c : lesCancaneursDeLaTroupe) {
+			c.accept(v);
+		}
+		
+	}
+
 }
